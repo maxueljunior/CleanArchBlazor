@@ -41,7 +41,7 @@ public sealed class Product : Entity
         DomainExceptionValidation.When(price < 0, "Price is required");
         DomainExceptionValidation.When(stock < 0, "Stock is required");
 
-        DomainExceptionValidation.When(image.Length > 250, "Image is long");
+        DomainExceptionValidation.When(image?.Length > 250, "Image is long");
 
         Name = name;
         Description = description;
